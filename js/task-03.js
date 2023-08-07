@@ -1,5 +1,4 @@
 
-        
 const existingUl = document.querySelector('ul');
 const images = [
   {
@@ -15,11 +14,11 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-images.forEach(image => {
-    const newLiImg = `
-                <li>
-                    <img src="${image.url}" alt="${image.alt}">
-                </li>
-            `;
-    existingUl.insertAdjacentHTML('beforeend', newLiImg);
-})
+
+const html = images.map(image => `
+  <li>
+    <img src="${image.url}" alt="${image.alt}">
+  </li>
+`).join('');
+
+existingUl.insertAdjacentHTML('beforeend', html);

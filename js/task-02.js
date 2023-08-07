@@ -10,9 +10,12 @@ const ingredients = [
 ];
 
 
-ingredients.forEach(fruit =>{
+const elementsToAdd = []; 
+
+ingredients.forEach(fruit => {
    const newLi = document.createElement('li');
    newLi.textContent = fruit;
-   existingUl.appendChild(newLi);
-
+   elementsToAdd.push(newLi); 
 });
+
+existingUl.append(...elementsToAdd);
